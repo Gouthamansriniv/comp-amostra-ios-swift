@@ -1,0 +1,15 @@
+/* 
+  Localizable.strings
+  BelemDeliveryFirebase
+
+  Created by Rodrigo Cavalcante on 8/19/16.
+  Copyright © 2016 Rodrigo Cavalcante. All rights reserved.
+*/
+
+"search_placeholder" = "Buscar por nome e/ou categoria";
+"added_to_favorite" = "%@ adicionado aos favoritos";
+"undo" = "Desfazer";
+"cancel" = "Cancelar";
+"call" = "Ligar";
+"add_to_favorite" = "Adicionar aos favoritos";
+"remove_from_favorite" = "Remover dos favoritos";

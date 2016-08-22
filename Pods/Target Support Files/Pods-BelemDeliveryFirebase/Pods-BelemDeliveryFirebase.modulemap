@@ -1,0 +1,6 @@
+framework module Pods_BelemDeliveryFirebase {
+  umbrella header "Pods-BelemDeliveryFirebase-umbrella.h"
+
+  export *
+  module * { export * }
+}
