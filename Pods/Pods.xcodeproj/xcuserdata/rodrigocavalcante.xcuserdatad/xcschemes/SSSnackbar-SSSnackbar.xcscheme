@@ -14,7 +14,7 @@
             buildForArchiving = "YES">
             <BuildableReference
                BuildableIdentifier = 'primary'
-               BlueprintIdentifier = '0BFC3FC2AF35C270A38EE886BFD4B650'
+               BlueprintIdentifier = '348782DDA627479250F39D09BA3B5F54'
                BlueprintName = 'SSSnackbar-SSSnackbar'
                ReferencedContainer = 'container:Pods.xcodeproj'
                BuildableName = 'SSSnackbar.bundle'>

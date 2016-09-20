@@ -33,8 +33,8 @@ class CompanyDataHandler: NSObject {
                         let companies = CompanyResponse(json : json as! JSON)
                         
                         self.persistencyManager.save(companies!)
-                        //self.processCompany(companies!.companies!)
-                        //completion(result: companies!.companies!)
+                        self.processCompany(companies!.companies!)
+                        completion(result: companies!.companies!)
                         
                     case .Failure(let error):
                         print("Request failed with error: \(error)")

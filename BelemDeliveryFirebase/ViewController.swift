@@ -18,7 +18,11 @@ protocol CarbonObserver : class {
 extension ViewController: CarbonTabSwipeNavigationDelegate {
     
     func carbonTabSwipeNavigation(carbonTabSwipeNavigation: CarbonTabSwipeNavigation, didMoveAtIndex index: UInt) {
-        
+        self.notify()
+    }
+    
+    func carbonTabSwipeNavigation(carbonTabSwipeNavigation: CarbonTabSwipeNavigation, willBeginTransitionFromIndex index: UInt) {
+        self.notify()
     }
     
     func carbonTabSwipeNavigation(carbonTabSwipeNavigation: CarbonTabSwipeNavigation, willMoveAtIndex index: UInt) {

@@ -29,22 +29,12 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
-		<key>ReactiveCocoa.xcscheme</key>
-		<dict>
-			<key>isShown</key>
-			<false/>
-		</dict>
 		<key>Realm.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
 		</dict>
 		<key>RealmSwift.xcscheme</key>
-		<dict>
-			<key>isShown</key>
-			<false/>
-		</dict>
-		<key>Result.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
@@ -72,32 +62,17 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>0BFC3FC2AF35C270A38EE886BFD4B650</key>
+		<key>18F90B476CBC07295FED8C35446F3CD1</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>0E4F0D27135CD8BEEF42DEE5089C1656</key>
+		<key>348782DDA627479250F39D09BA3B5F54</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>0F58F2B191FF2C10447616B8A30CE497</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>206C1083E866011E675DD3CDBC55060C</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>33649D455C591EB70573C308FA09D88D</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>3976C9BBAA215A6775EF77C37C391C28</key>
+		<key>3D87A7AEEB2F95855DE438A0F0173940</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -107,17 +82,7 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>5B9FAF7D3F2E775A65A6282B9EFEB2CB</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
 		<key>5CB7F1379E457733CFEE7D5DDA84CCA6</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>629A7B4539C0C95152D8F9C95E58EF2D</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -127,12 +92,27 @@
 			<key>primary</key>
 			<true/>
 		</dict>
+		<key>A6EC4E4C46FF9BA11F2FA82BB376EAA9</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 		<key>B07B012AE17952EE777271E277F90284</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>E2009A1D13A77E1A3B6E3A9AC8831853</key>
+		<key>ECD30E420C72507D0945282F5BAE824C</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>F1A4C67F94CD4A0696FE8452CECCC9C2</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>F6D6CFC9ADFCBC02002CB82423EC5144</key>
 		<dict>
 			<key>primary</key>
 			<true/>

@@ -12,7 +12,6 @@
 		930E99151D527A91003BA0B3 /* UIColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 930E99141D527A91003BA0B3 /* UIColorExtension.swift */; };
 		930E99171D527ED6003BA0B3 /* FavoriteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 930E99161D527ED6003BA0B3 /* FavoriteViewController.swift */; };
 		930E99191D527EE9003BA0B3 /* AboutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 930E99181D527EE9003BA0B3 /* AboutViewController.swift */; };
-		9323146C1D5E6A16008628FC /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 9323146B1D5E6A16008628FC /* GoogleService-Info.plist */; };
 		9328E0D01D6387E000E036DF /* FirebaseLogger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9328E0CF1D6387E000E036DF /* FirebaseLogger.swift */; };
 		9328E0D31D63A82900E036DF /* CompanyViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9328E0D21D63A82900E036DF /* CompanyViewModel.swift */; };
 		9328E0DB1D6497E500E036DF /* FavoriteViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9328E0DA1D6497E500E036DF /* FavoriteViewModel.swift */; };
@@ -31,6 +30,7 @@
 		938AA8751D64D29500AF5BA7 /* CompanyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 938AA8741D64D29500AF5BA7 /* CompanyViewController.swift */; };
 		93A192C71D522D6A005CFC97 /* CompanyCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93A192C61D522D6A005CFC97 /* CompanyCell.swift */; };
 		93D1C6611D520C6500D24C8A /* Company.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93D1C6601D520C6500D24C8A /* Company.swift */; };
+		93D5B1981D91A8C700C59FB3 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 93D5B1971D91A8C700C59FB3 /* GoogleService-Info.plist */; };
 		93F180191D51761400DAF873 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93F180181D51761400DAF873 /* AppDelegate.swift */; };
 		93F1801B1D51761400DAF873 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93F1801A1D51761400DAF873 /* ViewController.swift */; };
 		93F1801E1D51761400DAF873 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 93F1801C1D51761400DAF873 /* Main.storyboard */; };
@@ -45,7 +45,6 @@
 		930E99141D527A91003BA0B3 /* UIColorExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIColorExtension.swift; sourceTree = "<group>"; };
 		930E99161D527ED6003BA0B3 /* FavoriteViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FavoriteViewController.swift; sourceTree = "<group>"; };
 		930E99181D527EE9003BA0B3 /* AboutViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AboutViewController.swift; sourceTree = "<group>"; };
-		9323146B1D5E6A16008628FC /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		9328E0CF1D6387E000E036DF /* FirebaseLogger.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FirebaseLogger.swift; sourceTree = "<group>"; };
 		9328E0D21D63A82900E036DF /* CompanyViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CompanyViewModel.swift; sourceTree = "<group>"; };
 		9328E0DA1D6497E500E036DF /* FavoriteViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FavoriteViewModel.swift; sourceTree = "<group>"; };
@@ -68,6 +67,7 @@
 		938AA8741D64D29500AF5BA7 /* CompanyViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CompanyViewController.swift; sourceTree = "<group>"; };
 		93A192C61D522D6A005CFC97 /* CompanyCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CompanyCell.swift; sourceTree = "<group>"; };
 		93D1C6601D520C6500D24C8A /* Company.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Company.swift; sourceTree = "<group>"; };
+		93D5B1971D91A8C700C59FB3 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		93F180151D51761400DAF873 /* BelemDeliveryFirebase.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BelemDeliveryFirebase.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		93F180181D51761400DAF873 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		93F1801A1D51761400DAF873 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -218,7 +218,7 @@
 		93F180171D51761400DAF873 /* BelemDeliveryFirebase */ = {
 			isa = PBXGroup;
 			children = (
-				9323146B1D5E6A16008628FC /* GoogleService-Info.plist */,
+				93D5B1971D91A8C700C59FB3 /* GoogleService-Info.plist */,
 				9328E0E31D649F8E00E036DF /* util */,
 				9328E0E01D649F2400E036DF /* data */,
 				930E99131D527A80003BA0B3 /* extension */,
@@ -266,12 +266,13 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0730;
-				LastUpgradeCheck = 0730;
+				LastUpgradeCheck = 0800;
 				ORGANIZATIONNAME = "Rodrigo Cavalcante";
 				TargetAttributes = {
 					93F180141D51761400DAF873 = {
 						CreatedOnToolsVersion = 7.3.1;
 						DevelopmentTeam = DK2FD42JNK;
+						LastSwiftMigration = 0800;
 					};
 				};
 			};
@@ -298,13 +299,13 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9323146C1D5E6A16008628FC /* GoogleService-Info.plist in Resources */,
 				933CE5B11D679CB5003F2C08 /* Localizable.strings in Resources */,
 				937660161D6B5FE800FE90DC /* CompanyHeaderCell.xib in Resources */,
 				93F180231D51761400DAF873 /* LaunchScreen.storyboard in Resources */,
 				9343DEE01D5E5CA00028C37F /* CompanyCell.xib in Resources */,
 				930E99121D5275B6003BA0B3 /* Assets.xcassets in Resources */,
 				93F1801E1D51761400DAF873 /* Main.storyboard in Resources */,
+				93D5B1981D91A8C700C59FB3 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -426,6 +427,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
@@ -436,8 +438,10 @@
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
@@ -459,11 +463,12 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 2.3;
 			};
 			name = Debug;
 		};
@@ -471,6 +476,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
@@ -481,8 +487,10 @@
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
@@ -498,9 +506,11 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				SWIFT_VERSION = 2.3;
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;
@@ -509,14 +519,17 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 50922D740737509B0FCBD2B7 /* Pods-BelemDeliveryFirebase.debug.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = BelemDeliveryFirebase/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.onhands.belemdelivery;
+				PRODUCT_BUNDLE_IDENTIFIER = com.rodrigo.belemdelivery;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
+				SWIFT_VERSION = 2.3;
 			};
 			name = Debug;
 		};
@@ -524,14 +537,17 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = B92595124FA26F6E5573DC85 /* Pods-BelemDeliveryFirebase.release.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = BelemDeliveryFirebase/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.onhands.belemdelivery;
+				PRODUCT_BUNDLE_IDENTIFIER = com.rodrigo.belemdelivery;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
+				SWIFT_VERSION = 2.3;
 			};
 			name = Release;
 		};
