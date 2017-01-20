@@ -53,7 +53,7 @@ class PersistencyManager: NSObject {
         return companies
     }
     
-    func save(companies : CompanyResponse) {
+    func save(_ companies : CompanyResponse) {
 //        let data = NSKeyedArchiver.archivedDataWithRootObject(companies.toJSON()!)
 //        data.writeToFile(filepath, atomically: false)
         
@@ -65,7 +65,7 @@ class PersistencyManager: NSObject {
         }
     }
     
-    func addToFavorite(company: Company) {
+    func addToFavorite(_ company: Company) {
         let realm = try! Realm()
         try! realm.write() {
             let favorite = RealmFavorite()
@@ -75,10 +75,10 @@ class PersistencyManager: NSObject {
         }
     }
     
-    func removeFromFavorite(company: Company) {
+    func removeFromFavorite(_ company: Company) {
         let realm = try! Realm()
         try! realm.write() {
-            if let favorite = realm.objectForPrimaryKey(RealmFavorite.self, key: company.id) {
+            if let favorite = realm.object(ofType: RealmFavorite.self, forPrimaryKey: company.id as AnyObject) {
                 realm.delete(favorite)
             }
         }

@@ -40,11 +40,11 @@ class BelDelUITests: XCTestCase {
         sleep(_:5)
         
         snapshot("0-company")
-        tablesQuery.cells.containingType(.StaticText, identifier:"A Forneria").staticTexts["Pizzaria"].tap()
+        tablesQuery.cells.containing(.staticText, identifier:"A Forneria").staticTexts["Pizzaria"].tap()
         
         snapshot("1-establishment")
 
-        tablesQuery.elementBoundByIndex(tablesQuery.count - 1).tap()
+        tablesQuery.element(boundBy: tablesQuery.count - 1).tap()
         snapshot("2-add-to-favorite")
         
         let segmentedControlsQuery = app.toolbars.segmentedControls

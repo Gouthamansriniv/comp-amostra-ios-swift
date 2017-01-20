@@ -10,11 +10,11 @@ import Foundation
 protocol ListViewModel {
     func getFavoriteTitle() -> String
     func getFavoriteImageName() -> String
-    func getCompanyForIndexPath(indexPath: NSIndexPath) -> Company
+    func getCompanyForIndexPath(_ indexPath: IndexPath) -> Company
     func getSelectedCompany() -> Company
     func count() -> Int
-    func load(completion: (result: Bool) -> Void)
+    func load(_ completion: @escaping (_ result: Bool) -> Void)
     func removeSelectedCompany()
-    func selectCompanyAtIndexPath(indexPath: NSIndexPath)
-    func getSelectedIndex() -> NSIndexPath
+    func selectCompanyAtIndexPath(_ indexPath: IndexPath)
+    func getSelectedIndex() -> IndexPath
 }

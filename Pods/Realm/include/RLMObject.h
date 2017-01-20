@@ -19,6 +19,7 @@
 #import <Foundation/Foundation.h>
 
 #import <Realm/RLMObjectBase.h>
+#import <Realm/RLMThreadSafeReference.h>
 
 NS_ASSUME_NONNULL_BEGIN
 
@@ -91,12 +92,12 @@ NS_ASSUME_NONNULL_BEGIN
     times when you *cannot* begin a write transaction.
  */
 
-@interface RLMObject : RLMObjectBase
+@interface RLMObject : RLMObjectBase <RLMThreadConfined>
 
 #pragma mark - Creating & Initializing Objects
 
 /**
- Initializes an unmanaged instance of a Realm object.
+ Creates an unmanaged instance of a Realm object.
 
  Call `addObject:` on an `RLMRealm` instance to add an unmanaged object into that Realm.
  
@@ -106,7 +107,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 
 /**
- Initializes an unmanaged instance of a Realm object.
+ Creates an unmanaged instance of a Realm object.
  
  Pass in an `NSArray` or `NSDictionary` instance to set the values of the object's properties.
 
@@ -413,7 +414,7 @@ NS_ASSUME_NONNULL_BEGIN
 
  @param object  The object to compare the receiver to.
 
- @return    A Boolean indicating whether the object represents the same object as the receiver.
+ @return    Whether the object represents the same object as the receiver.
  */
 - (BOOL)isEqualToObject:(RLMObject *)object;
 

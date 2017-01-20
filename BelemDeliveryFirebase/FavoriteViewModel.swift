@@ -13,9 +13,9 @@ class FavoriteViewModel: ListViewModel {
     var companies = [Company]()
     var companiesFilter = [Company]()
     
-    var selectedCompany: NSIndexPath!
+    var selectedCompany: IndexPath!
     
-    func getCompanyForIndexPath(indexPath: NSIndexPath) -> Company {
+    func getCompanyForIndexPath(_ indexPath: IndexPath) -> Company {
         return self.companies[indexPath.row]
     }
     
@@ -27,22 +27,22 @@ class FavoriteViewModel: ListViewModel {
         return self.companies.count
     }
     
-    func load(completion: (result: Bool) -> Void) {
+    func load(_ completion: @escaping (_ result: Bool) -> Void) {
         self.companies = CompanyDataHandler.sharedInstance.getFavorites()
-        completion(result: true)
+        completion(true)
     }
     
     func removeSelectedCompany() {
         let company = getCompanyForIndexPath(selectedCompany!)
         CompanyDataHandler.sharedInstance.removeFromFavorite(company)
-        self.companies.removeAtIndex(selectedCompany!.row)
+        self.companies.remove(at: selectedCompany!.row)
     }
     
-    func selectCompanyAtIndexPath(indexPath: NSIndexPath) {
+    func selectCompanyAtIndexPath(_ indexPath: IndexPath) {
         selectedCompany = indexPath
     }
     
-    func getSelectedIndex() -> NSIndexPath {
+    func getSelectedIndex() -> IndexPath {
         return selectedCompany
     }
     

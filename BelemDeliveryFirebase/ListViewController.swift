@@ -11,7 +11,7 @@ import CZPicker
 import SDWebImage
 
 extension ListViewController: CZPickerViewDelegate, CZPickerViewDataSource {
-    func czpickerView(pickerView: CZPickerView!, imageForRow row: Int) -> UIImage! {
+    func czpickerView(_ pickerView: CZPickerView!, imageForRow row: Int) -> UIImage! {
         
         let company = viewModel.getSelectedCompany()
         
@@ -22,13 +22,13 @@ extension ListViewController: CZPickerViewDelegate, CZPickerViewDataSource {
         return UIImage(named: "call")
     }
     
-    func numberOfRowsInPickerView(pickerView: CZPickerView!) -> Int {
+    func numberOfRows(in pickerView: CZPickerView!) -> Int {
         let company = viewModel.getSelectedCompany()
         
         return company.phones!.count + 1
     }
     
-    func czpickerView(pickerView: CZPickerView!, titleForRow row: Int) -> String! {
+    func czpickerView(_ pickerView: CZPickerView!, titleForRow row: Int) -> String! {
         
         let company = viewModel.getSelectedCompany()
         
@@ -43,7 +43,7 @@ extension ListViewController: CZPickerViewDelegate, CZPickerViewDataSource {
         return company.phones![row]
     }
     
-    func czpickerView(pickerView: CZPickerView!, didConfirmWithItemAtRow row: Int) {
+    func czpickerView(_ pickerView: CZPickerView!, didConfirmWithItemAtRow row: Int) {
         
         
         let company = viewModel.getSelectedCompany()
@@ -51,9 +51,9 @@ extension ListViewController: CZPickerViewDelegate, CZPickerViewDataSource {
         if(row == company.phones!.count) {
             favoritesTouch()
         } else {
-            let phone = "tel://"+company.phones![row].stringByReplacingOccurrencesOfString("-", withString: "")
-            let URL = NSURL(string: phone)!
-            if(UIApplication.sharedApplication().canOpenURL(URL)) {
+            let phone = "tel://"+company.phones![row].replacingOccurrences(of: "-", with: "")
+            let URL = Foundation.URL(string: phone)!
+            if(UIApplication.shared.canOpenURL(URL)) {
                 
                 let parameters = [
                     "establishment": company.name!,
@@ -62,7 +62,7 @@ extension ListViewController: CZPickerViewDelegate, CZPickerViewDataSource {
                 ]
                 
                 FirebaseLogger.sharedInstance.log(parameters, name: "call")
-                UIApplication.sharedApplication().openURL(URL)
+                UIApplication.shared.openURL(URL)
             }
         }
     }
@@ -71,45 +71,45 @@ extension ListViewController: CZPickerViewDelegate, CZPickerViewDataSource {
 
 extension ListViewController : UITableViewDataSource, UITableViewDelegate {
     
-    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return viewModel.count()
     }
     
-    func numberOfSectionsInTableView(tableView: UITableView) -> Int {
+    func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }
     
-    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        let cell = tableView.dequeueReusableCellWithIdentifier("company") as! CompanyCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: "company") as! CompanyCell
         
         let company = viewModel.getCompanyForIndexPath(indexPath)
         
         cell.labelName.text = company.name
         cell.labelCategory.text = company.category
-        cell.companyImage.sd_setImageWithURL(NSURL(string: company.image!))
+        cell.companyImage.sd_setImage(with: URL(string: company.image!))
         cell.companyImage.layer.cornerRadius = cell.companyImage.frame.size.width / 2
         cell.companyImage.clipsToBounds = true
         cell.companyImage.layer.borderWidth = 1.0
-        cell.companyImage.layer.borderColor = UIColor.lightGrayColor().CGColor
+        cell.companyImage.layer.borderColor = UIColor.lightGray.cgColor
         
         return cell
     }
     
-    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        tableView.deselectRowAtIndexPath(indexPath, animated: false)
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: false)
         
         viewModel.selectCompanyAtIndexPath(indexPath)
         let company = viewModel.getSelectedCompany()
         
         let picker = CZPickerView.init(headerTitle: company.name, cancelButtonTitle: NSLocalizedString("cancel", comment: ""), confirmButtonTitle: NSLocalizedString("call", comment: ""))
-        picker.needFooterView = false
-        picker.headerBackgroundColor = UIColor(netHex: ColorPicker.sharedInstance.getColor())
-        picker.confirmButtonBackgroundColor = UIColor(netHex: ColorPicker.sharedInstance.getColor())
-        picker.delegate = self;
-        picker.dataSource = self;
+        picker?.needFooterView = false
+        picker?.headerBackgroundColor = UIColor(netHex: 0xDF343D)
+        picker?.confirmButtonBackgroundColor = UIColor(netHex: 0xDF343D)
+        picker?.delegate = self;
+        picker?.dataSource = self;
         
-        picker.show()
+        picker?.show()
     }
 }
 
@@ -121,8 +121,8 @@ class ListViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.companyTable.registerNib(UINib(nibName: "CompanyCell", bundle: nil), forCellReuseIdentifier: "company")
-        self.companyTable.registerNib(UINib(nibName: "CompanyHeaderCell", bundle: nil), forCellReuseIdentifier: "header")
+        self.companyTable.register(UINib(nibName: "CompanyCell", bundle: nil), forCellReuseIdentifier: "company")
+        self.companyTable.register(UINib(nibName: "CompanyHeaderCell", bundle: nil), forCellReuseIdentifier: "header")
     }
     
     func favoritesTouch() {

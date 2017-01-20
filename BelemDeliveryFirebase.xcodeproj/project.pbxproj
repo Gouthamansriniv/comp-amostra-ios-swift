@@ -24,7 +24,6 @@
 		9343DEE01D5E5CA00028C37F /* CompanyCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9343DEDF1D5E5CA00028C37F /* CompanyCell.xib */; };
 		9353CF0E1D525E3400359634 /* CompanyDataHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9353CF0D1D525E3400359634 /* CompanyDataHandler.swift */; };
 		9353CF121D5260DE00359634 /* PersistencyManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9353CF111D5260DE00359634 /* PersistencyManager.swift */; };
-		936FD71A1D5CEA33006C396B /* ColorPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 936FD7191D5CEA33006C396B /* ColorPicker.swift */; };
 		937660141D6B5FD700FE90DC /* CompanyHeaderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 937660131D6B5FD700FE90DC /* CompanyHeaderCell.swift */; };
 		937660161D6B5FE800FE90DC /* CompanyHeaderCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 937660151D6B5FE800FE90DC /* CompanyHeaderCell.xib */; };
 		938AA8751D64D29500AF5BA7 /* CompanyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 938AA8741D64D29500AF5BA7 /* CompanyViewController.swift */; };
@@ -34,7 +33,6 @@
 		93D5B1A01D91AFFC00C59FB3 /* BelDelUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93D5B19F1D91AFFC00C59FB3 /* BelDelUITests.swift */; };
 		93D5B1A91D91B15D00C59FB3 /* SnapshotHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93D5B1A71D91B07600C59FB3 /* SnapshotHelper.swift */; };
 		93F180191D51761400DAF873 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93F180181D51761400DAF873 /* AppDelegate.swift */; };
-		93F1801B1D51761400DAF873 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93F1801A1D51761400DAF873 /* ViewController.swift */; };
 		93F1801E1D51761400DAF873 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 93F1801C1D51761400DAF873 /* Main.storyboard */; };
 		93F180231D51761400DAF873 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 93F180211D51761400DAF873 /* LaunchScreen.storyboard */; };
 		93FA29B01D52110F00F35AEB /* Status.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93FA29AF1D52110F00F35AEB /* Status.swift */; };
@@ -73,7 +71,6 @@
 		9343DEDF1D5E5CA00028C37F /* CompanyCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CompanyCell.xib; sourceTree = "<group>"; };
 		9353CF0D1D525E3400359634 /* CompanyDataHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CompanyDataHandler.swift; sourceTree = "<group>"; };
 		9353CF111D5260DE00359634 /* PersistencyManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PersistencyManager.swift; sourceTree = "<group>"; };
-		936FD7191D5CEA33006C396B /* ColorPicker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColorPicker.swift; sourceTree = "<group>"; };
 		937660131D6B5FD700FE90DC /* CompanyHeaderCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CompanyHeaderCell.swift; sourceTree = "<group>"; };
 		937660151D6B5FE800FE90DC /* CompanyHeaderCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CompanyHeaderCell.xib; sourceTree = "<group>"; };
 		938AA8741D64D29500AF5BA7 /* CompanyViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CompanyViewController.swift; sourceTree = "<group>"; };
@@ -86,7 +83,6 @@
 		93D5B1A71D91B07600C59FB3 /* SnapshotHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SnapshotHelper.swift; path = ../fastlane/SnapshotHelper.swift; sourceTree = "<group>"; };
 		93F180151D51761400DAF873 /* BelemDeliveryFirebase.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BelemDeliveryFirebase.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		93F180181D51761400DAF873 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		93F1801A1D51761400DAF873 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		93F1801D1D51761400DAF873 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		93F180221D51761400DAF873 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		93F180241D51761400DAF873 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -135,7 +131,6 @@
 		930E990C1D526D4A003BA0B3 /* view */ = {
 			isa = PBXGroup;
 			children = (
-				93F1801A1D51761400DAF873 /* ViewController.swift */,
 				938AA8741D64D29500AF5BA7 /* CompanyViewController.swift */,
 				930E99161D527ED6003BA0B3 /* FavoriteViewController.swift */,
 				930E99181D527EE9003BA0B3 /* AboutViewController.swift */,
@@ -193,7 +188,6 @@
 		9328E0E31D649F8E00E036DF /* util */ = {
 			isa = PBXGroup;
 			children = (
-				936FD7191D5CEA33006C396B /* ColorPicker.swift */,
 				9328E0CF1D6387E000E036DF /* FirebaseLogger.swift */,
 				9328E0DE1D649D6300E036DF /* Protocol.swift */,
 			);
@@ -296,12 +290,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 93F180271D51761400DAF873 /* Build configuration list for PBXNativeTarget "BelemDeliveryFirebase" */;
 			buildPhases = (
-				349D5366179F771A205814DD /* 📦 Check Pods Manifest.lock */,
+				349D5366179F771A205814DD /* [CP] Check Pods Manifest.lock */,
 				93F180111D51761400DAF873 /* Sources */,
 				93F180121D51761400DAF873 /* Frameworks */,
 				93F180131D51761400DAF873 /* Resources */,
-				7CF7A00F0260207A8DDBB034 /* 📦 Embed Pods Frameworks */,
-				1B8AC5D6A1D4B99308868918 /* 📦 Copy Pods Resources */,
+				7CF7A00F0260207A8DDBB034 /* [CP] Embed Pods Frameworks */,
+				1B8AC5D6A1D4B99308868918 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -319,17 +313,18 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0730;
-				LastUpgradeCheck = 0800;
+				LastUpgradeCheck = 0820;
 				ORGANIZATIONNAME = "Rodrigo Cavalcante";
 				TargetAttributes = {
 					93D5B19C1D91AFFC00C59FB3 = {
 						CreatedOnToolsVersion = 7.3.1;
+						LastSwiftMigration = 0820;
 						TestTargetID = 93F180141D51761400DAF873;
 					};
 					93F180141D51761400DAF873 = {
 						CreatedOnToolsVersion = 7.3.1;
 						DevelopmentTeam = DK2FD42JNK;
-						LastSwiftMigration = 0800;
+						LastSwiftMigration = 0820;
 					};
 				};
 			};
@@ -377,14 +372,14 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		1B8AC5D6A1D4B99308868918 /* 📦 Copy Pods Resources */ = {
+		1B8AC5D6A1D4B99308868918 /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "📦 Copy Pods Resources";
+			name = "[CP] Copy Pods Resources";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -392,29 +387,29 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-BelemDeliveryFirebase/Pods-BelemDeliveryFirebase-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		349D5366179F771A205814DD /* 📦 Check Pods Manifest.lock */ = {
+		349D5366179F771A205814DD /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "📦 Check Pods Manifest.lock";
+			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
-		7CF7A00F0260207A8DDBB034 /* 📦 Embed Pods Frameworks */ = {
+		7CF7A00F0260207A8DDBB034 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "📦 Embed Pods Frameworks";
+			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -441,7 +436,6 @@
 				937660141D6B5FD700FE90DC /* CompanyHeaderCell.swift in Sources */,
 				9328E0D01D6387E000E036DF /* FirebaseLogger.swift in Sources */,
 				930E99171D527ED6003BA0B3 /* FavoriteViewController.swift in Sources */,
-				93F1801B1D51761400DAF873 /* ViewController.swift in Sources */,
 				93A192C71D522D6A005CFC97 /* CompanyCell.swift in Sources */,
 				93F180191D51761400DAF873 /* AppDelegate.swift in Sources */,
 				938AA8751D64D29500AF5BA7 /* CompanyViewController.swift in Sources */,
@@ -453,7 +447,6 @@
 				93D1C6611D520C6500D24C8A /* Company.swift in Sources */,
 				9343DED61D5E48690028C37F /* RealmCompany.swift in Sources */,
 				93FA29B31D52117200F35AEB /* CompanyResponse.swift in Sources */,
-				936FD71A1D5CEA33006C396B /* ColorPicker.swift in Sources */,
 				9328E0DF1D649D6300E036DF /* Protocol.swift in Sources */,
 				930E99151D527A91003BA0B3 /* UIColorExtension.swift in Sources */,
 				93FA29B01D52110F00F35AEB /* Status.swift in Sources */,
@@ -513,6 +506,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = rodrigocavalcante.BelDelUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 				TEST_TARGET_NAME = BelemDeliveryFirebase;
 			};
 			name = Debug;
@@ -525,6 +519,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = rodrigocavalcante.BelDelUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 				TEST_TARGET_NAME = BelemDeliveryFirebase;
 			};
 			name = Release;
@@ -635,7 +630,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.rodrigo.belemdelivery;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
-				SWIFT_VERSION = 2.3;
+				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
 		};
@@ -653,7 +648,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.rodrigo.belemdelivery;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
-				SWIFT_VERSION = 2.3;
+				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
 		};

@@ -10,4 +10,12 @@ import UIKit
 
 class AboutViewController: UIViewController {
 
+    @IBOutlet weak var customTitle: UILabel!
+
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        customTitle.text = NSLocalizedString("about", comment: "")
+    }
+    
 }
+

@@ -11,53 +11,42 @@ import Realm
 import SSSnackbar
 import CZPicker
 import SDWebImage
-import CarbonKit
 import Firebase
 
 extension CompanyViewController: UISearchResultsUpdating {
-    func updateSearchResultsForSearchController(searchController: UISearchController) {
+    func updateSearchResults(for searchController: UISearchController) {
         filterContentForSearchText(searchController.searchBar.text!)
     }
 }
 
-class CompanyViewController: ListViewController, CarbonObserver  {
-    
-    var refresh: CarbonSwipeRefresh!
+class CompanyViewController: ListViewController  {
     
     let searchController = UISearchController(searchResultsController: nil)
+    @IBOutlet weak var customTitle: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.initCarbonSwipe()
         self.viewModel = CompanyViewModel()
+        customTitle.text = NSLocalizedString("establishment", comment: "")
         self.initSearchController()
         getList()
-    }
-    
-    func initCarbonSwipe() {
-        self.refresh = CarbonSwipeRefresh.init(scrollView: self.companyTable)
-        self.view.addSubview(self.refresh)
-        self.refresh.colors = [
-            UIColor(netHex: ColorPicker.sharedInstance.getColor())
-        ]
-        self.refresh.addTarget(self, action: #selector(getList), forControlEvents: .ValueChanged)
     }
     
     func initSearchController() {
         searchController.searchResultsUpdater = self
         searchController.dimsBackgroundDuringPresentation = false
-        searchController.searchBar.tintColor = UIColor(netHex: ColorPicker.sharedInstance.getColor())
-        searchController.searchBar.barTintColor = UIColor.whiteColor()
+        searchController.searchBar.tintColor = UIColor(netHex: 0xDF343D)
+        searchController.searchBar.barTintColor = UIColor.white
         searchController.searchBar.placeholder = NSLocalizedString("search_placeholder", comment: "")
         definesPresentationContext = true
         companyTable.tableHeaderView = searchController.searchBar
     }
     
     func willChangeTabs() {
-        self.searchController.dismissViewControllerAnimated(true, completion: nil)
+        self.searchController.dismiss(animated: true, completion: nil)
     }
     
-    func filterContentForSearchText(searchText: String, scope: String = "All") {
+    func filterContentForSearchText(_ searchText: String, scope: String = "All") {
         (self.viewModel as! CompanyViewModel).filterBy(searchText)
         companyTable.reloadData()
     }
@@ -72,12 +61,9 @@ class CompanyViewController: ListViewController, CarbonObserver  {
     }
     
     func getList() {
-        self.refresh?.startRefreshing()
-        
         self.viewModel.load { (result) in
             if result {
                 self.companyTable.reloadData()
-                self.refresh?.endRefreshing()
             }
         }
     }

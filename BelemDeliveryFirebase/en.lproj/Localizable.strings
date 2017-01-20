@@ -13,3 +13,6 @@
 "call" = "Call";
 "add_to_favorite" = "Add to favorites";
 "remove_from_favorite" = "Remove from favorites";
+"establishment" = "Establishment";
+"favorites" = "Favorites";
+"about" = "About";

@@ -12,7 +12,7 @@ class FirebaseLogger: NSObject {
     
     static let sharedInstance = FirebaseLogger()
     
-    private override init() {
+    fileprivate override init() {
         super.init()
         
         if let user = FIRAuth.auth()?.currentUser {
@@ -20,14 +20,14 @@ class FirebaseLogger: NSObject {
         }
     }
     
-    func log(object : [String: String], name: String) {
+    func log(_ object : [String: String], name: String) {
         var object = object
         if let user = FIRAuth.auth()?.currentUser {
             object["user"] = user.uid
                 FIRAnalytics.setUserID(user.uid)
         }
         
-        FIRAnalytics.logEventWithName(name, parameters: object)
+        FIRAnalytics.logEvent(withName: name, parameters: object as [String : NSObject]?)
     }
     
 }

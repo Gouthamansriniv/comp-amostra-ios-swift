@@ -16,38 +16,35 @@ class CompanyDataHandler: NSObject {
     var persistencyManager: PersistencyManager!
     let isOnline: Bool = true
     
-    private override init() {
+    fileprivate override init() {
         super.init()
         persistencyManager = PersistencyManager.init()
     }
     
-    func getCompanies(completion: (result: [Company]) -> Void) {
-        
+    func getCompanies(_ completion: @escaping (_ result: [Company]) -> Void) {
         if(isOnline) {
-            Alamofire.request(.GET, "http://www.fctradecenter.com/delivery/api/company", parameters: nil)
-                .responseJSON { response in
+            Alamofire.request("http://www.fctradecenter.com/delivery/api/company", method: HTTPMethod.get, parameters: nil, encoding: JSONEncoding.default, headers: nil).responseJSON(completionHandler: { (response) in
+                switch response.result {
                     
-                    switch response.result {
-                        
-                    case .Success(let json):
-                        let companies = CompanyResponse(json : json as! JSON)
-                        
-                        self.persistencyManager.save(companies!)
-                        self.processCompany(companies!.companies!)
-                        completion(result: companies!.companies!)
-                        
-                    case .Failure(let error):
-                        print("Request failed with error: \(error)")
-                        
-                        completion(result: self.persistencyManager.get())
-                    }
-            }
+                case .success(let json):
+                    let companies = CompanyResponse(json : json as! JSON)
+                    
+                    self.persistencyManager.save(companies!)
+                    self.processCompany(companies!.companies!)
+                    completion(companies!.companies!)
+                    
+                case .failure(let error):
+                    print("Request failed with error: \(error)")
+                    
+                    completion(self.persistencyManager.get())
+                }
+            })
         } else {
-            completion(result: self.persistencyManager.get())
+            completion(self.persistencyManager.get())
         }
     }
     
-    func processCompany(companies: [Company]) -> [String:[Company]] {
+    func processCompany(_ companies: [Company]) -> [String:[Company]] {
         var dic = [String:[Company]]()
         
         var keys = [String]()
@@ -63,7 +60,7 @@ class CompanyDataHandler: NSObject {
         
         for key in keys {
             dic[key] = companies.filter() {company in (
-                    (company.name?.lowercaseString.hasPrefix(key.lowercaseString))!)}
+                (company.name?.lowercased().hasPrefix(key.lowercased()))!)}
         }
         
         return dic
@@ -73,17 +70,17 @@ class CompanyDataHandler: NSObject {
         return self.persistencyManager.getFavorites()
     }
     
-    func addToFavorite(company: Company) {
-        CSSearchableIndex.defaultSearchableIndex().indexSearchableItems([company.item], completionHandler: nil)
+    func addToFavorite(_ company: Company) {
+        CSSearchableIndex.default().indexSearchableItems([company.item], completionHandler: nil)
         
         self.persistencyManager.addToFavorite(company)
     }
     
-    func removeFromFavorite(company: Company) {
+    func removeFromFavorite(_ company: Company) {
         
         CSSearchableIndex
-            .defaultSearchableIndex()
-            .deleteSearchableItemsWithIdentifiers([company.id!], completionHandler: nil)
+            .default()
+            .deleteSearchableItems(withIdentifiers: [company.id!], completionHandler: nil)
         
         self.persistencyManager.removeFromFavorite(company)
     }

@@ -15,9 +15,9 @@ class CompanyViewModel: ListViewModel {
     
     var isActive: Bool = false
     
-    var selectedCompany: NSIndexPath!
+    var selectedCompany: IndexPath!
     
-    func getCompanyForIndexPath(indexPath: NSIndexPath) -> Company {
+    func getCompanyForIndexPath(_ indexPath: IndexPath) -> Company {
         var company:Company!
         if isActive {
             company = self.companiesFilter[indexPath.row]
@@ -42,24 +42,24 @@ class CompanyViewModel: ListViewModel {
         }
     }
     
-    func filterBy(searchText: String) {
+    func filterBy(_ searchText: String) {
         
         if (searchText == "") { isActive = false } else { isActive = true}
         
         self.companiesFilter = self.companies.filter(){company in (
-            (company.name?.lowercaseString.containsString(searchText.lowercaseString))! ||
-                (company.category?.lowercaseString.containsString(searchText.lowercaseString))!
+            (company.name?.lowercased().contains(searchText.lowercased()))! ||
+                (company.category?.lowercased().contains(searchText.lowercased()))!
             )}
     }
     
-    func load(completion: (result: Bool) -> Void) {
+    func load(_ completion: @escaping (_ result: Bool) -> Void) {
         CompanyDataHandler.sharedInstance.getCompanies { (result) in
     
             if(result.count > 0) {
                 self.companies = result
-                completion(result: true)
+                completion(true)
             } else {
-                completion(result: false)
+                completion(false)
             }
         }
     }
@@ -72,21 +72,21 @@ class CompanyViewModel: ListViewModel {
         return NSLocalizedString("add_to_favorite", comment: "")
     }
     
-    func selectCompanyAtIndexPath(indexPath: NSIndexPath) {
+    func selectCompanyAtIndexPath(_ indexPath: IndexPath) {
         selectedCompany = indexPath
     }
     
-    func getSelectedIndex() -> NSIndexPath {
+    func getSelectedIndex() -> IndexPath {
         return selectedCompany
     }
     
     func removeSelectedCompany() {
         let company = getSelectedCompany()
         CompanyDataHandler.sharedInstance.removeFromFavorite(company)
-        self.companies.removeAtIndex(selectedCompany!.row)
+        self.companies.remove(at: selectedCompany!.row)
     }
     
-    func isActive(isActive: Bool) {
+    func isActive(_ isActive: Bool) {
         self.isActive = isActive
     }
 }

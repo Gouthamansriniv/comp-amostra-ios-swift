@@ -7,22 +7,19 @@
 //
 
 import UIKit
-import Realm
-import SSSnackbar
-import CZPicker
-import SDWebImage
-import CarbonKit
-import Firebase
 
 class FavoriteViewController: ListViewController {
+    
+    @IBOutlet weak var customTitle: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         self.viewModel = FavoriteViewModel()
+        customTitle.text = NSLocalizedString("favorites", comment: "")
         getList()
     }
     
-    override func viewWillAppear(animated: Bool) {
+    override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         self.getList()
     }
@@ -38,7 +35,7 @@ class FavoriteViewController: ListViewController {
     override func favoritesTouch() {
         self.viewModel.removeSelectedCompany()
         companyTable.beginUpdates()
-        companyTable.deleteRowsAtIndexPaths([viewModel.getSelectedIndex()], withRowAnimation: .Top)
+        companyTable.deleteRows(at: [viewModel.getSelectedIndex() as IndexPath], with: .top)
         companyTable.endUpdates()
     }
 }

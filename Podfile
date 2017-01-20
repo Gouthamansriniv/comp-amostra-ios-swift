@@ -5,11 +5,10 @@ platform :ios, '8.0'
 use_frameworks!
 
 target 'BelemDeliveryFirebase' do
-    pod 'Alamofire', '~> 3.4'
-    pod 'Gloss', '~> 0.7'
-    pod 'SDWebImage', '~>3.8'
+    pod 'Alamofire'
+    pod 'Gloss'
+    pod 'SDWebImage'
     pod 'CZPicker'
-    pod 'CarbonKit'
     pod 'TextFieldEffects'
     pod 'RealmSwift'
     pod 'SSSnackbar'
