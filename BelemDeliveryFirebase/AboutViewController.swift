@@ -6,15 +6,25 @@
 //  Copyright © 2016 Rodrigo Cavalcante. All rights reserved.
 //
 
+import Cartography
 import UIKit
 
 class AboutViewController: UIViewController {
 
-    @IBOutlet weak var customTitle: UILabel!
+    let container = AboutView()
 
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        customTitle.text = NSLocalizedString("about", comment: "")
+    init() {
+        super.init(nibName: nil, bundle: nil)
+        self.tabBarItem.image = UIImage(named: "sobre")
+        self.container.scrollView.contentInset = UIEdgeInsets(top: 0, left: 0, bottom: 49, right: 0)
+    }
+    
+    required init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
+    override func loadView() {
+        self.view = container
     }
     
 }

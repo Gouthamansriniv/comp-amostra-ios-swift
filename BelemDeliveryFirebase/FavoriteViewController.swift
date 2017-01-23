@@ -7,15 +7,22 @@
 //
 
 import UIKit
+import Cartography
 
 class FavoriteViewController: ListViewController {
     
-    @IBOutlet weak var customTitle: UILabel!
+    init() {
+        super.init(viewModel: FavoriteViewModel(), title: NSLocalizedString("favorites", comment: ""))
+        self.tabBarItem.image = UIImage(named: "favoritos")
+        self.tableView.rowHeight = 60
+    }
+    
+    required init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.viewModel = FavoriteViewModel()
-        customTitle.text = NSLocalizedString("favorites", comment: "")
         getList()
     }
     
@@ -27,15 +34,15 @@ class FavoriteViewController: ListViewController {
     func getList() {
         self.viewModel.load { (result) in
             if(result) {
-                self.companyTable.reloadData()
+                self.tableView.reloadData()
             }
         }
     }
     
     override func favoritesTouch() {
         self.viewModel.removeSelectedCompany()
-        companyTable.beginUpdates()
-        companyTable.deleteRows(at: [viewModel.getSelectedIndex() as IndexPath], with: .top)
-        companyTable.endUpdates()
+        tableView.beginUpdates()
+        tableView.deleteRows(at: [viewModel.getSelectedIndex() as IndexPath], with: .top)
+        tableView.endUpdates()
     }
 }

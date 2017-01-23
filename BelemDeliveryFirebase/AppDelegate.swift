@@ -18,6 +18,17 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Override point for customization after application launch.
         FIRApp.configure()
         
+        window = UIWindow(frame: UIScreen.main.bounds)
+        window?.makeKeyAndVisible()
+        
+        let tabBarController = UITabBarController()
+        
+        tabBarController.setViewControllers([CompanyViewController(), FavoriteViewController(), AboutViewController()], animated: true)
+        tabBarController.tabBar.tintColor = UIColor.init(netHex: 0xDF343D)
+        //tabBarController.tabBar.isTranslucent = false
+        
+        window?.rootViewController = tabBarController
+        
         return true
     }
 

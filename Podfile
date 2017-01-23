@@ -16,5 +16,6 @@ target 'BelemDeliveryFirebase' do
     pod 'Firebase/Auth'
     pod 'Firebase/Core'
     pod 'Firebase/Crash'
+    pod 'Cartography'
 end
 

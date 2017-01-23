@@ -9,6 +9,7 @@
 import UIKit
 import CZPicker
 import SDWebImage
+import Cartography
 
 extension ListViewController: CZPickerViewDelegate, CZPickerViewDataSource {
     func czpickerView(_ pickerView: CZPickerView!, imageForRow row: Int) -> UIImage! {
@@ -81,17 +82,15 @@ extension ListViewController : UITableViewDataSource, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        let cell = tableView.dequeueReusableCell(withIdentifier: "company") as! CompanyCell
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: "company") as? CompanyCell else {
+            return UITableViewCell()
+        }
         
         let company = viewModel.getCompanyForIndexPath(indexPath)
         
         cell.labelName.text = company.name
         cell.labelCategory.text = company.category
         cell.companyImage.sd_setImage(with: URL(string: company.image!))
-        cell.companyImage.layer.cornerRadius = cell.companyImage.frame.size.width / 2
-        cell.companyImage.clipsToBounds = true
-        cell.companyImage.layer.borderWidth = 1.0
-        cell.companyImage.layer.borderColor = UIColor.lightGray.cgColor
         
         return cell
     }
@@ -115,17 +114,59 @@ extension ListViewController : UITableViewDataSource, UITableViewDelegate {
 
 class ListViewController: UIViewController {
     
-    @IBOutlet weak var companyTable: UITableView!
+    let topView: TopView
+    var viewModel: ListViewModel
+    let tableView: UITableView
     
-    var viewModel: ListViewModel! = nil
+    let containerView = UIView()
+    
+    init(viewModel: ListViewModel, title: String) {
+        self.viewModel = viewModel
+        topView = TopView(title: title)
+        self.tableView = UITableView(frame: CGRect.zero, style: .plain)
+        
+        super.init(nibName: nil, bundle: nil)
+        
+        self.tableView.dataSource = self
+        self.tableView.delegate = self
+        
+        self.view.backgroundColor = .white
+        self.tableView.contentInset = UIEdgeInsets(top: 0, left: 0, bottom: 49, right: 0)
+        
+        containerView.addSubview(topView)
+        containerView.addSubview(tableView)
+        
+        setupConstraints()
+        containerView.translatesAutoresizingMaskIntoConstraints = true
+    }
+
+    required init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
     
     override func viewDidLoad() {
-        super.viewDidLoad()
-        self.companyTable.register(UINib(nibName: "CompanyCell", bundle: nil), forCellReuseIdentifier: "company")
-        self.companyTable.register(UINib(nibName: "CompanyHeaderCell", bundle: nil), forCellReuseIdentifier: "header")
+        self.tableView.register(CompanyCell.self, forCellReuseIdentifier: "company")
+    }
+    
+    override func loadView() {
+        self.view = containerView
     }
     
     func favoritesTouch() {
         
+    }
+    
+    func setupConstraints() {
+        constrain(topView, tableView, containerView) { topView, tableView, containerView in
+            topView.top == containerView.top
+            topView.left == containerView.left
+            topView.right == containerView.right
+            topView.height == 64
+            
+            tableView.top == topView.bottom
+            tableView.left == containerView.left
+            tableView.right == containerView.right
+            tableView.bottom == containerView.bottom
+        }
     }
 }
